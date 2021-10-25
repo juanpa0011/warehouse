@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/styles.css">
+        <title>Warehouse | Usuarios</title>
+
+    </head>
+<body>
+    <div id="loader-folder">
+        <div class="loader">
+            <div class="interest-bar">
+                <div class="top-cover"></div>
+                <div class="bottom-cover"></div>
+                <div class="heart"></div>
+            </div>
+            <div class="interest-bar">
+                <div class="top-cover"></div>
+                <div class="bottom-cover"></div>
+                <div class="heart"></div>
+            </div>
+            <div class="interest-bar">
+                <div class="top-cover"></div>
+                <div class="bottom-cover"></div>
+                <div class="heart"></div>
+            </div>
+            <div class="interest-bar">
+                <div class="top-cover"></div>
+                <div class="bottom-cover"></div>
+                <div class="heart"></div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="site-titl">
+            <a href="/">
+                <h1>WAREHOUSE</h1>
+            </a>
+        </div>
+        <ul>
+            <li><a id="1" href="/">Contactos</a></li>
+            <li><a id="2" href="/companies">Compañias</a></li>
+            <li><a id="3" href="/users">Usuarios</a></li>
+            <li><a id="4" href="/regions">Region/Ciudad</a></li>
+            <li><a id="5" href="/login">Login</a></li>
+            <li><a id="6" href="/login">Log out</a></li>
+        </ul>
+    
+        <script src="/javascript/localstorage.js"></script>
+    </header>
+    <main>
+        <aside class="corner-left"></aside>
+        <div id="container-pop-up" class="hidden">
+            <h2>region</h2>
+            <div class="button-holder">
+                <div class="button-delete" id="pop-up--cancel-operation">
+                    
+                </div>
+                <div class="button-check" id="pop-up--confirm-operation">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="form-cover">
+            <div class="container-form">
+                <h2>Crear Usuario</h2>
+                <form action="/users" method="POST">
+                
+                <label for="">Nombre</label>
+                <div>
+                    <input id="first_name" name="first_name" type="text" required autocomplete="off">              <!-- INPUT ID -->
+                </div>
+                
+                <label for="">Apellido</label>
+                <div>
+                    <input id="last_name" name="last_name" type="text" required autocomplete="off">
+                </div>              <!-- INPUT ID -->
+                
+                <label for="">Email</label>
+                <div>
+                    <input id="email" name="email" type="text" required autocomplete="off">
+                </div>                  <!-- INPUT ID -->
+                
+                <label for="">Perfil</label>
+                <div>
+                    <input id="user" name="user" type="text" required autocomplete="off">
+                </div>                   <!-- INPUT ID -->
+                
+                <label  for="">Contraseña</label>
+                <div>
+                    <input id="password" name="password" type="password" required autocomplete="off">
+                </div>          <!-- INPUT ID -->
+                
+                <label for="">Repetir Contraseña</label>
+                <div>
+                    <input  id="repassword" name="repassword"  type="password" required autocomplete="off"> 
+                </div>          <!-- INPUT ID -->
+                
+                <button type="submit">Crear Usuario</button>
+                </form>
+                <div class="table-users">
+                    <div class="table-header">
+                        <h5>Nombre</h5>
+                        <h5>Apellido</h5>
+                        <h5>Perfil</h5>
+                        <h5>Email</h5>
+                        <h5>Actions</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <aside class="corner-right"></aside>
+    </main>
+    <footer>
+        <div>
+            Copyright &copy; Data Warehouse Backending-Code by MrJ.
+        </div>
+    </footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/javascript/users.js"></script>
+</body>
+</html>

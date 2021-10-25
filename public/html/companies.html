@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/styles.css">
+        <title>Warehouse | Compañias</title>
+
+    </head>
+<body>
+    <div id="loader-folder">
+        <div class="loader">
+            <div class="interest-bar">
+                <div class="top-cover"></div>
+                <div class="bottom-cover"></div>
+                <div class="heart"></div>
+            </div>
+            <div class="interest-bar">
+                <div class="top-cover"></div>
+                <div class="bottom-cover"></div>
+                <div class="heart"></div>
+            </div>
+            <div class="interest-bar">
+                <div class="top-cover"></div>
+                <div class="bottom-cover"></div>
+                <div class="heart"></div>
+            </div>
+            <div class="interest-bar">
+                <div class="top-cover"></div>
+                <div class="bottom-cover"></div>
+                <div class="heart"></div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="site-titl">
+            <a href="/">
+                <h1>WAREHOUSE</h1>
+            </a>
+        </div>
+        <ul>
+            <li><a id="1" href="/">Contactos</a></li>
+            <li><a id="2" href="/companies">Compañias</a></li>
+            <li><a id="3" href="/users">Usuarios</a></li>
+            <li><a id="4" href="/regions">Region/Ciudad</a></li>
+            <li><a id="5" href="/login">Login</a></li>
+            <li><a id="6" href="/login">Log out</a></li>
+        </ul>
+    
+        <script src="/javascript/localstorage.js"></script>
+    </header>
+    <main>
+        <aside class="corner-left"></aside>
+        <div id="container-pop-up" class="hidden">
+            <h2>region</h2>
+            <label for="">Nombre:</label>
+            <input type="text" required autocomplete="off">
+            <label for="">Direccion pertinente</label>
+            <input type=""></input>
+            <div class="button-holder">
+                <div class="button-delete" id="pop-up--cancel-operation">
+                    
+                </div>
+                <div class="button-check" id="pop-up--confirm-operation">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="container-companies">
+            <div class="container-control">
+                <div id="add-company">
+                    <div class="helper-pop-up">
+                        Crear una compañia
+                    </div>
+                </div>
+            </div>
+            <div class="container-table">
+                <div class="table-header">
+                    <div>
+                        <h3>
+                            Nombre
+                        </h3>
+                    </div>
+                    <div>
+                        <h3>
+                            País/Region
+                        </h3>
+                    </div>
+                    <div>
+                        <h3>
+                            Dirección
+                        </h3>
+                    </div>
+                    <div>
+                        <h3>
+                            Acciones
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <aside class="corner-right"></aside>
+    </main>
+    <footer>
+        <div>
+            Copyright &copy; Data Warehouse Backending-Code by MrJ.
+        </div>
+    </footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/javascript/companies.js"></script>
+</body>
+</html>

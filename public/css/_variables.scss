@@ -1,0 +1,35 @@
+$corner-background-left: linear-gradient( 90deg, (rgba($color: #0e1538, $alpha: 1)) 40%, (rgba($color: rgb(255, 255, 255), $alpha: 0.5)) 100% );
+
+$corner-background-right: linear-gradient( 270deg, (rgba($color: #0e1538, $alpha: 1)) 40%, (rgba($color: rgb(255, 255, 255), $alpha: 0.5)) 100%);
+
+$box-shadow-black: 0px 10px 10px (rgba($color: rgb(255, 255, 255), $alpha: 0.5));
+
+$background-color: #0e1538;
+
+$box-shadow-cyan: 5px 10px 50px (rgba($color: rgb(255, 255, 255), $alpha: 0.5));
+
+$blur-background: linear-gradient(45deg, #0cf,#0e1538,#0e1538,rgb(202, 18, 193));
+
+$bars-cover: radial-gradient(circle at 100%, #fd8c4a, #fd8c4a 50%, #eee 99%, #fd8c4a 25%);
+
+$bar-25: radial-gradient(#e06f2e, #0e1538);
+
+$color25: #e06f2e;
+
+$bar-50: radial-gradient(#f8e918, #0e1538);
+
+$color50: #f8e918;
+
+$bar-75: radial-gradient(#1ae1fc, #0e1538);
+
+$color75: #1ae1fc;
+
+$bar-100: radial-gradient(#28f554, #0e1538);
+
+$color100: #28f554;
+
+$backgroundAddrow: url("../assets/img/addrow.png") no-repeat center;
+$backgroundSetting: url("../assets/img/setting.png") no-repeat center;
+$backgroundDelete: url("../assets/img/delete.png") no-repeat center;
+$backgroundAddHeader: url("../assets/img/addheader.png") no-repeat center;
+$backgroundCheck: url("../assets/img/check.png") no-repeat center;
