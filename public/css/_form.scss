@@ -1,0 +1,287 @@
+.form-cover {
+    background: $background-color;
+    width: 80%;
+    
+    margin: 30px 0px;
+    height: 90vh;
+    position: relative;
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: $blur-background;
+        transition: 0.5s;
+    }
+    &:hover::before {
+        inset: -3px;
+    }
+    &:hover::after {
+        inset: -10px;
+        filter: blur(10px);
+    }
+    #login {
+        h2 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        form {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            margin-left: 25%;
+        }
+    }
+    .container-form {
+        h2 {
+            margin-top: 60px;
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+        position: relative;
+        display: grid;
+
+
+        grid-template-columns: 350px 2fr;
+        gap: 5px;
+
+        align-content: center;
+        text-align: center;
+        padding: 20px 60px;
+
+        color: white;
+    
+        border: 2px black solid;
+        background: $background-color;
+        max-height: 90vh;
+        height: 90vh;
+
+        padding: 20px 10px;
+        overflow: hidden;
+        z-index: 5;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 70%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: #ebebeb, $alpha: 0.075);
+            transform: skew(135deg);
+            transition: 1s;
+        }
+        form {
+            position: relative;
+            display: grid;
+            grid-template-columns: 0.5fr 1fr;
+            grid-template-rows: 1fr;
+            z-index: 5;
+
+            grid-column-start: 1;
+            grid-column-end: 2;
+    
+            margin: 30px 0px;
+            width: 50%;
+            label {
+                justify-self: center;
+                align-self: center;
+                text-align: center;
+                z-index: inherit;
+            }
+            div {
+                position: relative;
+                width: 240px;
+                height: 30px;
+                margin: 10px 0px;
+                display: flex;
+                justify-content: flex-start;
+                margin-left: 10px;
+                &::before, &::after {
+                    content: '';
+                    position: absolute;
+                    inset: -1px;
+                    transition: 0.5s;
+                    
+                }
+                &:hover::before {
+                    inset: -3px;
+                }
+                &:hover::after {
+                    inset: -5px;
+                    background: $blur-background;
+                    filter: blur(5px);
+                }
+                > input {
+                    position: relative;
+                    width: 240px;
+                    height: 30px;
+        
+                    padding: 0px 20px;
+        
+                    border: 2px solid black;
+                    background: white;
+    
+                    font-size: 16px;
+                    transition: 1s;
+                    z-index: 5;
+                    &:focus {
+                        outline: none;
+                    }
+                    &:hover {
+                        transition: 1s;
+                        box-shadow: $box-shadow-cyan;
+                    }
+                }
+            }
+            button {
+                position: relative;
+                grid-column-end: -1;
+                grid-column-start: 1;
+    
+                margin-top: 15px;
+                justify-self: center;
+                font-weight: bold;
+    
+                height: 50px;
+                width: 150px;
+    
+                background: $background-color;
+                color: white;
+                border: 2px solid black;
+                z-index: inherit;
+                overflow: hidden;
+                &:hover {
+                    box-shadow: 2px 5px 10px white;
+                    transition: 0.5s;
+                    }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 70%;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba($color: #ebebeb, $alpha: 0.075);
+                    transform: skew(125deg);
+                    transition: 1s;
+                }
+            }
+        }
+        .table-users {
+            background: $background-color;
+            border: 1px black solid;
+            margin: 0px 0px;
+            margin-bottom: 20px;
+            z-index: 10;
+            .table-header {
+                border-bottom: 1px black solid;
+                height: 60px;
+                display: grid;
+
+                grid-template-columns: 0.7fr 0.7fr 0.7fr 1fr 0.7fr;
+                justify-content: center;
+                align-content: center;
+            }
+            .cover-user{
+                display: inline-block;
+                position: relative;
+
+                width: 100%;
+                height: 40px;
+
+                overflow-x: hidden;
+                scroll-behavior: smooth;
+                scrollbar-width: none;
+                margin-top: 10px;
+                margin-bottom: 10px;
+
+                &::-webkit-scrollbar {
+                    scrollbar-width: none;
+                    display: none;
+                }
+                .user-contact {
+                    position: relative;
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+            
+                    justify-items: center;
+                    align-content: center;
+                    padding: 5px;
+                    text-align: center;
+                    z-index: 5;
+                    background: $background-color;
+                    height: 40px;
+
+                    p{
+                        font-size: 12px;
+                    }
+
+                    &:hover {
+                        > div > .button-holder {
+                            visibility: visible;
+                        }
+                        &::before {
+                            filter: blur(2px);
+                            left: 10%;
+                        }
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 70%;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba($color: #ebebeb, $alpha: 0.075);
+                        transform: skew(125deg);
+                        transition: 1s;
+                    }
+                    div > .button-holder {
+                        justify-self: flex-start;
+                        text-align: center;
+                        align-self: flex-start;
+                        
+                        display: flex;
+                        
+                        align-items: flex-start;
+                        visibility: hidden;
+                        z-index: 15;
+                        .button-edit {
+                            background: $backgroundSetting;
+                            &:hover {
+                                .helper-pop-up {
+                                    visibility: initial;
+                                    z-index: 50;
+                                }
+                            }
+                            
+                        }
+                        .button-delete {
+                            background: $backgroundDelete;
+                            &:hover {
+                                .helper-pop-up {
+                                    visibility: initial;
+                                }
+                            }
+                        }
+                    
+                        .button-edit, .button-delete {
+                            display: flex;
+                        
+                            align-items: center;
+                        
+                            justify-content: center;
+                        
+                            width: 40px;
+                            height: 30px;
+                    
+                            margin: 0px 10px;
+                            cursor: pointer;
+                            z-index: 5;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,181 @@
+#loader-folder {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+
+    background: $background-color;
+
+    opacity: 0.95;
+    transition: 3s;
+
+    z-index: 50;
+    .loader {
+        position: relative;
+        display: grid;
+
+        width: 600px;
+        height: 300px;
+
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        align-content: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 0px 20px;
+
+        z-index: 100;
+        .interest-bar {
+            display: grid;
+            grid-template-rows: 0.25fr 1.5fr 0.25fr;
+            width: 100px;
+            height: 300px;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 10rem;
+            z-index: inherit;
+            opacity: inherit;
+            filter: blur(0px);
+            .top-cover {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+        
+                grid-row-start: 1;
+                grid-row-end: 2;
+        
+                background: $bars-cover;
+        
+                border-radius: 10rem 10rem 0px 0px
+            }
+            .bottom-cover {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+        
+                background: $bars-cover;
+        
+                grid-row-start: 3;
+                grid-row-end: 4;
+        
+                border-radius: 0 0 10rem 10rem;
+            }
+            .heart { 
+                transition: 1s;
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                
+                grid-row-start: 2;
+                grid-row-end: 3;
+        
+                background: $background-color;
+                box-shadow: $box-shadow-cyan;
+                align-self: start;
+            }
+        }
+
+        .interest-bar:nth-child(1) > .heart {
+            transition: ease-in-out;
+            animation: 3s infinite .1s loadingOne;
+        }
+        .interest-bar:nth-child(2) > .heart {
+            transition: ease-in-out;
+            animation: 3s infinite .1s loadingTwo;
+        }
+        .interest-bar:nth-child(3) > .heart {
+            transition: ease-in-out;
+            animation: 3s infinite .1s loadingThree;
+        }
+        .interest-bar:nth-child(4) > .heart {
+            transition: ease-in-out;
+            animation: 3s infinite .1s loadingFour;
+        }
+    }
+}
+
+@keyframes loadingOne {
+    0% {
+        background: #0e1538;
+    }
+    25% {
+        background: $color25;
+    }
+    45% {
+        background: $color50;
+    }
+    65% {
+        background: $color75;
+    }
+    85% {
+        background: $color100;
+    }
+    100% {
+        background: #0e1538;
+    }
+}
+@keyframes loadingTwo {
+    0% {
+        background: #0e1538;
+    }
+    25% {
+        background: #0e1538;
+    }
+    45% {
+        background: $color50;
+    }
+    65% {
+        background: $color75;
+    }
+    85% {
+        background: $color100;
+    }
+    100% {
+        background: #0e1538;
+    }
+}
+@keyframes loadingThree {
+    0% {
+        background: #0e1538;
+    }
+    25% {
+        background: #0e1538;
+    }
+    45% {
+        background: #0e1538;
+    }
+    65% {
+        background: $color75;
+    }
+    85% {
+        background: $color100;
+    }
+    100% {
+        background: #0e1538;
+    }
+}
+@keyframes loadingFour {
+    0% {
+        background: #0e1538;
+    }
+    25% {
+        background: #0e1538;
+    }
+    45% {
+        background: #0e1538;
+    }
+    65% {
+        background: #0e1538;
+    }
+    85% {
+        background: $color100;
+    }
+    100% {
+        background: #0e1538;
+    }
+}

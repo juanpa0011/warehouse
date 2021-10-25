@@ -1,0 +1,61 @@
+@import "variables";
+@import "header";
+@import "footer";
+@import "nav-contacts";
+@import "table-contacts";
+@import "form";
+@import "regions";
+@import "table-companies";
+@import "buttons";
+@import "loader";
+@import "pop-up";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.corner-left {
+    background: $corner-background-right;
+    height: auto;
+    width: 15%;
+}
+.corner-right {
+    background: $corner-background-left;
+    height: auto;
+    width: 15%;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    background: $background-color;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.blurred {
+    filter: blur(10px);
+}
+
+.focused {
+    filter: blur(0px) !important;
+}
+
+.maybe {
+    visibility: hidden;
+}
+
+.titleh1 {
+    color: $blur-background;
+}

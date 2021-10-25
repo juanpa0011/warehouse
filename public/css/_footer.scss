@@ -1,0 +1,22 @@
+footer {
+    height: 40px;
+    width: 100%;
+    background: rgb(31, 31, 31);
+    color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    div {
+        margin-left: 10%;
+        align-self: center;
+    }
+    .social-holder {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        align-self: center;
+        margin-left: 30%;
+        .social-item {
+            margin: 0px 15px;
+        }
+    }
+}

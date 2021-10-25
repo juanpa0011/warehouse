@@ -1,0 +1,284 @@
+.container-contacts {
+    display: grid;
+    height: 70vh;
+
+    color: white;
+
+    grid-template-rows: 60px repeat(8, 1fr);
+
+    margin: 20px 60px;
+    margin-top: 60px;
+    gap: 25px;
+
+    border: 2px solid black;
+    scroll-behavior: smooth;
+    overflow-x:  hidden;
+    scrollbar-width: none;
+
+    box-shadow: $box-shadow-black;
+    .folder-cover{
+        display: inline-block;
+        position: relative;
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: $blur-background;
+            transition: 0.5s;
+        }
+        &:hover::before {
+            inset: -3px;
+        }
+        &:hover::after {
+            inset: -10px;
+            filter: blur(10px);
+        }
+
+        .contact-folder {
+            z-index: 5;
+            position: relative;
+            grid-column-start: 1;
+            grid-column-end: -1;
+
+            display: grid;
+            grid-template-columns: 30px 320px repeat(6, 1fr);
+            text-align: center;
+            background: $background-color;
+
+            justify-items: center;
+            align-content: center;
+            height: 60px;
+            
+            padding: 0px 20px;
+            input {
+                width: 15px;
+                align-self: center;
+            }
+            .contact-name {
+                position: relative;
+                display: grid;
+                grid-template-columns: 70px 250px;
+                grid-template-rows: 30px 30px;
+                text-align: left;
+                > h3 {
+                    grid-column-start: 2;
+                    grid-column-end: 3;
+                    font-size: 14px;
+                    text-align: left;
+                }
+                > p {
+                    grid-column-start: 2;
+                    grid-column-end: 3;
+                    grid-row-start: 2;
+                    font-size: 12px;
+                    text-align: left;
+                }
+                .contact-img {
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                    grid-row-start: 1;
+                    grid-row-end: 3;
+                }
+                .no-img {
+                    background: url("../assets/img/noimg.png") no-repeat center;
+                }
+            }
+            div > p {
+                cursor: pointer;
+                font-size: 12px;
+                text-align: center;
+            }
+            div > h3 {
+                font-size: 12px;
+            }
+            div > h4 {
+                font-size: 9px;
+            }
+            div > .button-holder {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+                .button-edit {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &:hover {
+                        .helper-pop-up {
+                            visibility: initial;
+                        }
+                    }
+                }
+                .button-delete {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &:hover {
+                        .helper-pop-up {
+                            visibility: initial;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                > div > .button-holder {
+                    visibility: visible;
+                }
+                &::before {
+                    filter: blur(2px);
+                    left: 10%;
+                }
+                .showInterest25 {
+                    .interestbar:nth-child(1) > .heart {
+                        background: $bar-25;
+                        transition: 1s;
+                    }
+                }
+                .showInterest50 {
+                    .interestbar:nth-child(1) .heart{
+                        background: $bar-50;
+                        transition: 1s;
+                    }
+
+                    .interestbar:nth-child(2) .heart  {
+                        background: $bar-50;
+                        transition: 1s;
+                    }
+                }
+                .showInterest75 {
+                    >.interestbar:nth-child(1) > .heart, 
+                    >.interestbar:nth-child(2) > .heart,  
+                    >.interestbar:nth-child(3) > .heart  {
+                        background: $bar-75;
+                        transition: 1s;
+                    }
+                }
+                .showInterest100  {
+                    >.interestbar:nth-child(1) > .heart, >.interestbar:nth-child(2) > .heart,  >.interestbar:nth-child(3) > .heart,  >.interestbar:nth-child(4) > .heart  {
+                        background: $bar-100;
+                        transition: 1s;
+                    }
+                }
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 70%;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: #ebebeb, $alpha: 0.075);
+                transform: skew(125deg);
+                transition: 1s;
+            }
+        }
+    }
+
+}
+
+.tabler-header {
+    position: relative;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-end: 2;
+
+    display: grid;
+    grid-template-columns: 30px 320px repeat(6, 1fr);
+
+    justify-items: center;
+    align-content: center;
+
+    border-bottom: 2px solid black;
+    background-color: transparent;
+
+    padding: 0px 20px;
+    overflow: hidden;
+    &:hover {
+        > div > .button-holder {
+            visibility: visible;
+        }
+        &::before {
+            filter: blur(2px);
+            left: 10%;
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 70%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #ebebeb, $alpha: 0.075);
+        transform: skew(125deg);
+        transition: 1s;
+    }
+
+    input {
+        align-self: center;
+        width: 15px;
+    }
+    div > h3 {
+        font-size: 16px;
+    }
+}
+
+.showInterest0, .showInterest25, .showInterest50, .showInterest75, .showInterest100  {
+    position: relative;
+
+    width: 100px;
+    height: 55px;
+    transition: 1s;
+
+    display: grid;
+    align-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    padding: 0px 5px;
+    .interestbar {
+        display: grid;
+        grid-template-rows: 0.25fr 1.5fr 0.25fr;
+        width: 10px;
+        height: 40px;
+        .top-cover {
+            position: relative;
+            display: inline-block;
+            width: auto;
+            height: auto;
+
+            grid-row-start: 1;
+            grid-row-end: 2;
+
+            background: $bars-cover;
+
+            border-radius: 1rem 1rem 0px 0px
+        }
+        .bottom-cover {
+            position: relative;
+            display: inline-block;
+            width: auto;
+            height: auto;
+
+            background: $bars-cover;
+
+            grid-row-start: 3;
+            grid-row-end: 4;
+
+            border-radius: 0 0 1rem 1rem;
+        }
+        .heart { 
+            transition: 1s;
+            position: relative;
+            display: inline-block;
+            width: auto;
+            height: auto;
+            
+            grid-row-start: 2;
+            grid-row-end: 3;
+
+            background: $background-color;
+        }
+    }
+}
+

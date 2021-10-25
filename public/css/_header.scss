@@ -1,0 +1,89 @@
+header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 45px;
+    background: rgb(31, 31, 31);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+        .site-titl {
+            position: relative;
+            display: flex;
+            align-self: center;
+            a {
+                h1 {
+                    color: rgba($color: #ffffff, $alpha: 0.9);
+                    font-size: 31px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    position: relative;
+                    word-spacing: 1px;
+                }
+                p {
+                    color: rgba($color: #ffffff, $alpha: 0.9);
+                    margin-top: 10px;
+                    font-size: 19px;
+                }
+            }
+        }
+        ul {
+            height: 100%;
+            width: 60%;
+            align-self: center;
+            margin: 0px 20%;
+
+            list-style: none;
+
+            display: flex;
+            flex-direction: row;
+            margin-right: 2rem;
+            justify-content: flex-end;
+            li {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+                
+                
+                width: 130px;
+                height: 45px;
+
+                color: white;
+                border-left: 2px solid black;
+                border-right: 2px solid black;
+
+                text-transform: uppercase;
+
+                font-weight: bold;
+                font-size: 14px;
+
+                margin: 0px 5px;
+
+                text-align: center;
+                transition: 0.5s;
+                cursor: pointer;
+
+                overflow: hidden;
+                a {
+                    z-index: 5;
+                }
+                &:hover {
+                    box-shadow: 2px 5px 10px white;
+                    transition: 0.5s;
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba($color: #ebebeb, $alpha: 0.075);
+                    transform: skew(125deg);
+                    filter: blur(3px);
+                }
+            }
+        }
+}
