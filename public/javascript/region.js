@@ -229,13 +229,9 @@ popUpConfirm.addEventListener('click', () => {
 })
 
 addRegion.addEventListener('click' , () => {
-    loader.classList.remove('hidden')
     popUp.classList.remove('hidden');
     popUp.firstElementChild.innerText = "Agregar Region";
     popUp.getElementsByTagName('label')[0].innerText = 'Nombre:'
-    setTimeout(() => {
-        loader.classList.add('hidden')
-    }, 1000);
 })
 
 popUpCancel.addEventListener('click', () => {
