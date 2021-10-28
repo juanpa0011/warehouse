@@ -235,7 +235,16 @@ async function regions(URLLocations) {
         res.data.forEach(region => {
             console.log(region.region)
             let regionOpt = document.createElement('option');
-            regionOpt.value = region.region;
+            
+            let regionSpaceString = region.region.split(' ');
+
+            if (regionSpaceString.length > 1) {
+                regionSpaceString = regionSpaceString.join('-');
+            } else {
+                regionSpaceString = region.region;
+            }
+
+            regionOpt.value = regionSpaceString;
             regionOpt.innerText = region.region;
     
             let countrySelect = document.createElement('select');
@@ -254,7 +263,7 @@ async function regions(URLLocations) {
                             // IF CITY NODE == TO COUNTRY NAME | CREATE OPTION
                             // ... UNDER SUB-GROUP COUNTRY. ELSE - PASS
                             let cityOpt = document.createElement('option');
-                            cityOpt.classList.add(region.region);
+                            cityOpt.classList.add(regionSpaceString);
                             cityOpt.value = city.split('$')[0];
                             cityOpt.innerText = city.split('$')[0];
                             countryOpt.appendChild(cityOpt)
@@ -262,7 +271,7 @@ async function regions(URLLocations) {
                     });
                     if(!countryOpt.hasChildNodes()) {
                         let cityOpt = document.createElement('option');
-                        cityOpt.classList.add(region.region);
+                        cityOpt.classList.add(regionSpaceString);
                         cityOpt.value = 'No city avaliable';
                         cityOpt.innerText = 'No city avaliable';
                         countryOpt.appendChild(cityOpt);
