@@ -442,6 +442,7 @@ const locationQuery = (req, res) => {
         if (err) {
             console.log(err);
         } else {
+            console.log(row);
             res.json(row);
         }
     })

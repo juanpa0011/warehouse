@@ -462,7 +462,16 @@ function createLocation(div) {
         });
         arrayLocations.forEach(region => {
             let regionOpt = document.createElement('option');
-            regionOpt.value = region.name;
+
+            let regionSpaceString = region.name.split(' ');
+
+            if (regionSpaceString.length > 1) {
+                regionSpaceString = regionSpaceString.join('-');
+            } else {
+                regionSpaceString = region.name;
+            }
+
+            regionOpt.value = regionSpaceString;
             regionOpt.innerText = region.name;
     
             let countrySelect = document.createElement('select');
@@ -480,7 +489,7 @@ function createLocation(div) {
                             // IF CITY NODE == TO COUNTRY NAME | CREATE OPTION
                             // ... UNDER SUB-GROUP COUNTRY. ELSE - PASS
                             let cityOpt = document.createElement('option');
-                            cityOpt.classList.add(region.name);
+                            cityOpt.classList.add(regionSpaceString);
                             cityOpt.value = city.split('$')[0];
                             cityOpt.innerText = city.split('$')[0];
                             countryOpt.appendChild(cityOpt)
@@ -488,7 +497,7 @@ function createLocation(div) {
                     });
                     if(!countryOpt.hasChildNodes()) {
                         let cityOpt = document.createElement('option');
-                        cityOpt.classList.add(region.name);
+                        cityOpt.classList.add(regionSpaceString);
                         cityOpt.value = 'No city avaliable';
                         cityOpt.innerText = 'No city avaliable';
                         countryOpt.appendChild(cityOpt);
