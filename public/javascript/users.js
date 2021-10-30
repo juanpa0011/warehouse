@@ -7,9 +7,13 @@ const popUp = document.getElementById('container-pop-up');
 const popUpCancel = document.getElementById("pop-up--cancel-operation");
 const popUpConfirm = document.getElementById("pop-up--confirm-operation");
 
+const registerbtn = document.getElementById('registerbtn');
+
 const URLusers = `http://localhost:3000/userData`;
 
 const URLQueryUser = `http://localhost:3000/users`;
+
+
 
 // VARIABLES
 
@@ -121,10 +125,50 @@ async function getUsers(URLusers) {
             authorization: localStorage.getItem('token')
         }
     }).then(res => {
-        console.log(res)
         res.data.forEach(data => {
             createUsers(data);
         });
+    }).catch (err => {
+        console.log(err);
+    })
+}
+
+registerbtn.addEventListener('click', async (event) => {
+    event.preventDefault();
+    const bodyLogin = {
+        "first_name": document.getElementById('first_name').value,
+        "last_name": document.getElementById('last_name').value,
+        "email": document.getElementById('email').value,
+        "user": document.getElementById('user').value,
+        "password": document.getElementById('password').value,
+        "repassword": document.getElementById('repassword').value,
+    }
+    axionPostQuery(bodyLogin);
+})
+
+
+function axionPostQuery(bodyLogin) {
+    axios({
+        method: 'POST',
+        url: URLQueryUser,
+        headers: {
+            authorization: localStorage.getItem('token')
+        },
+        data: {
+            first_name: bodyLogin.first_name,
+            last_name: bodyLogin.last_name,
+            email: bodyLogin.email,
+            user: bodyLogin.user,
+            password: bodyLogin.password,
+            repassword: bodyLogin.repassword,
+        }
+    }).then(res => {
+        console.log(res.data)
+        if(isNaN(res.data)) {
+            alert(res.data)
+        } else {
+            window.location.reload(false);
+        }
     }).catch (err => {
         console.log(err);
     })

@@ -13,7 +13,7 @@ router.get('/login', warehouseLogin);
 
 // #################  POSTs
 
-router.post('/users', validateTokenOADMIN, postRegister );
+router.post('/users', validateTokenOADMIN, passwordsMatch, postRegister );
 
 router.post('/regions', dopplergangerLocation, validateToken, postRegion);
 router.post('/country', dopplergangerLocation, validateToken, postCountry);

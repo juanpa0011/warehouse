@@ -99,8 +99,9 @@ const userExist = (req, res, next) => {
 
 const passwordsMatch = (req,res,next) => {
     const {password, repassword} = req.body
+    console.log(password);
     if(password !== repassword) {
-        return res.status(403).send("Las contraseñas no son iguales.");
+        return res.send("Las contraseñas no son iguales.");
     }
     next();
 }
