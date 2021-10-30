@@ -55,14 +55,6 @@ CREATE TABLE `ciudades` (
   `id_pais` int(22) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `ciudades`
---
-
-INSERT INTO `ciudades` (`id_ciudad`, `name`, `id_pais`) VALUES
-(9, 'Otxword', 9),
-(10, 'Choto Mate', 9);
-
 -- --------------------------------------------------------
 
 --
@@ -118,12 +110,6 @@ CREATE TABLE `paises` (
   `id_region` int(22) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `paises`
---
-
-INSERT INTO `paises` (`id_pais`, `name`, `id_region`) VALUES
-(9, 'Canada', 13);
 
 -- --------------------------------------------------------
 
@@ -136,12 +122,6 @@ CREATE TABLE `regiones` (
   `name` varchar(120) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `regiones`
---
-
-INSERT INTO `regiones` (`id_region`, `name`) VALUES
-(13, 'Norte America');
 
 -- --------------------------------------------------------
 
