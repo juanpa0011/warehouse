@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const {warehouseIndex, warehouseUser, warehouseLocations, warehouseCompanies, warehouseLogin, postRegister, locationQuery, postLogin, companiesQuery, userQuery, contactQuery, postRegion, postCountry, postCity, deleteRegion, deleteCountry, deleteCity, putRegion, putCountry, putCity, postCompany, deleteCompany, putCompany, deleteUser, searchContactQueryName, searchContactQueryEmail, searchContactQueryCompany, postContact, putContact, deleteContact} = require('../controllers/api');
-const {userNoExist, validateToken, dopplergangerLocation, dopplergangerCompania, dopplergangerContact, validateTokenOADMIN} = require('../middleware/middleware');
+const {userNoExist, validateToken, dopplergangerLocation, dopplergangerCompania, dopplergangerContact, validateTokenOADMIN, passwordsMatch} = require('../middleware/middleware');
 const router = Router();
 
 // ############## APIs Direct to Files
