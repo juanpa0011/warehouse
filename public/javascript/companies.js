@@ -172,6 +172,7 @@ function createFolders(data) {
     h3country.innerText = data.country;
 
     divlocation.appendChild(h3country);
+    divlocation.appendChild(h4city);
     folder.appendChild(divlocation);
     // COMPANY REG - END
 
