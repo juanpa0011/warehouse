@@ -338,18 +338,34 @@ function assessQuery(String) {
         let target = locateTarget(String, 2);
         let inputName = popUp.getElementsByTagName('input')[0].value; // VALUES FROM POP-UPs Inputs.
         let inputDir = popUp.getElementsByTagName('input')[1].value;
-        let citySelect = popUp.getElementsByClassName('select-active')[0].value;
-        axionEdit(inputName,inputDir,citySelect, target);
+        let citySelect = popUp.getElementsByClassName('select-active')[0];
+        if (citySelect.value != undefined) {
+            axionEdit(inputName,inputDir,citySelect, target);
+            return;
+        }
+        if(citySelect.value == undefined) {
+            alert('No se detecto ninguna selecion de region');
+            return;
+        }
+        alert('No se seleciono una ubicacion concreta o el almacen de datos no tiene ninguna guardada.')
+        return;
+        
     }
     if (query == 'AGREGAR') {
 
         let inputName = popUp.getElementsByTagName('input')[0].value; // VALUES FROM POP-UPs Inputs.
         let inputDir = popUp.getElementsByTagName('input')[1].value;
         let citySelect = popUp.getElementsByClassName('select-active')[0];
-        if (citySelect != undefined) {
-            axionPostQuery(inputName, inputDir, citySelect.value)
+        if (citySelect.value == 'No city avaliable') {
+            alert('No se seleciono una ubicacion concreta o el almacen de datos no tiene ninguna guardada.')
+            return;
         }
-        alert('No se seleciono una ubicacion concreta o el almacen de datos no tiene ninguna guardada.')
+        if(citySelect.value == undefined) {
+            alert('No se detecto ninguna selecion de region');
+            return;
+        }
+        axionPostQuery(inputName, inputDir, citySelect.value)
+        return;
     }
 }
 function axionPostQuery(inputName, inputDir, citySelect) {

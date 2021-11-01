@@ -765,15 +765,35 @@ function axionQuery(query, target) {
     for (let index = 0; index < locSelect.length; index++) {
         if (locSelect[index].getAttribute('class').split(' ').length == 1 ) {
             locAux = locSelect[index].value;
-            console.log(locAux)
         }
         
+    }
+
+    if (locAux == 'No city avaliable') {
+        alert('No se seleciono una ubicacion concreta o el almacen de datos no tiene ninguna guardada.')
+        return;
+    }
+    if(locAux == undefined) {
+        alert('No se detecto ninguna selecion de region');
+        return;
+    }
+    if(locAux == '') {
+        alert('No se detecto ninguna selecion de region');
+        return;
     }
 
     // COMPANY Select finder
 
     let compValue = popUp.getElementsByClassName('company-selector')[0].getElementsByClassName('region-select')[0].value;
-    console.log(compValue);
+
+    if(compValue == '') {
+        alert('No se detecto ninguna selecion de compañia');
+        return;
+    }
+    if(compValue == undefined) {
+        alert('No se detecto ninguna selecion de compañia');
+        return;
+    }
     
     // CHANNEL SELECTOR
 
