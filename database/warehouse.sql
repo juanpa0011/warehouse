@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-10-2021 a las 01:38:21
+-- Tiempo de generación: 01-11-2021 a las 14:31:16
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.8
 
@@ -55,6 +55,14 @@ CREATE TABLE `ciudades` (
   `id_pais` int(22) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `ciudades`
+--
+
+INSERT INTO `ciudades` (`id_ciudad`, `name`, `id_pais`) VALUES
+(11, 'Washington', 10),
+(12, 'BSAS', 11);
+
 -- --------------------------------------------------------
 
 --
@@ -67,6 +75,16 @@ CREATE TABLE `companies` (
   `id_ciudad` int(22) NOT NULL,
   `dir` varchar(120) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `companies`
+--
+
+INSERT INTO `companies` (`id_company`, `name`, `id_ciudad`, `dir`) VALUES
+(10, 'Test1', 12, 'Test1'),
+(11, 'Test2', 11, 'Test2'),
+(12, 'Test3', 11, 'Test3 '),
+(13, 'Test4', 11, 'Test4');
 
 -- --------------------------------------------------------
 
@@ -86,6 +104,14 @@ CREATE TABLE `contactos` (
   `imgurl` varchar(220) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `contactos`
+--
+
+INSERT INTO `contactos` (`id_contact`, `id_ciudad`, `id_company`, `rank`, `first_name`, `last_name`, `email`, `noise`, `imgurl`) VALUES
+(13, 12, 11, 'Marketing', 'Miguel', 'Angel', 'miguelangel@gmail.com', '75', ''),
+(14, 11, 10, 'CEO', 'Marco', 'Murro', 'marcom@gmail.com', '100', '');
+
 -- --------------------------------------------------------
 
 --
@@ -97,6 +123,16 @@ CREATE TABLE `lista` (
   `id_canal` int(22) NOT NULL,
   `id_contact` int(22) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `lista`
+--
+
+INSERT INTO `lista` (`id_list`, `id_canal`, `id_contact`) VALUES
+(33, 1, 13),
+(34, 4, 13),
+(35, 4, 14),
+(36, 5, 14);
 
 -- --------------------------------------------------------
 
@@ -110,6 +146,15 @@ CREATE TABLE `paises` (
   `id_region` int(22) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `paises`
+--
+
+INSERT INTO `paises` (`id_pais`, `name`, `id_region`) VALUES
+(10, 'EEUU', 13),
+(11, 'Argentina', 14),
+(12, 'Chile', 14),
+(13, 'Canada', 13);
 
 -- --------------------------------------------------------
 
@@ -122,6 +167,13 @@ CREATE TABLE `regiones` (
   `name` varchar(120) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `regiones`
+--
+
+INSERT INTO `regiones` (`id_region`, `name`) VALUES
+(13, 'Norte America'),
+(14, 'Sudamerica');
 
 -- --------------------------------------------------------
 
@@ -144,7 +196,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_user`, `first_name`, `last_name`, `perfil`, `password`, `role`, `email`) VALUES
-(3, 'admin', 'admin', 'admin', '$2b$10$7TwQ4KtLpgUxA1zTJ4UKD.KRL7xRwI4Yufk8i8A94msNKoqyCAtcy', 'ADM', 'admin');
+(2, 'Ben', 'Pela', 'benpela', '$2b$10$9jvY8xSf83JAXsiXkYvGjO.g5Zl0w214K6k58.QduqAwpAIfg7g/a', 'USER', 'benjapela@gmail.com'),
+(3, 'admin', 'admin', 'admin', '$2b$10$7TwQ4KtLpgUxA1zTJ4UKD.KRL7xRwI4Yufk8i8A94msNKoqyCAtcy', 'ADM', 'admin'),
+(4, 'user', 'user', 'user', '$2b$10$rQR3wvI9pgfRJ7v/6qZv2.Ra1C4HtNqqOqK14.2kfJ.X//l0Qdz2u', 'USER', 'user');
 
 --
 -- Índices para tablas volcadas
@@ -221,43 +275,43 @@ ALTER TABLE `canales`
 -- AUTO_INCREMENT de la tabla `ciudades`
 --
 ALTER TABLE `ciudades`
-  MODIFY `id_ciudad` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_ciudad` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `companies`
 --
 ALTER TABLE `companies`
-  MODIFY `id_company` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_company` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `contactos`
 --
 ALTER TABLE `contactos`
-  MODIFY `id_contact` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_contact` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `lista`
 --
 ALTER TABLE `lista`
-  MODIFY `id_list` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_list` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `paises`
 --
 ALTER TABLE `paises`
-  MODIFY `id_pais` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_pais` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `regiones`
 --
 ALTER TABLE `regiones`
-  MODIFY `id_region` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_region` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_user` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
